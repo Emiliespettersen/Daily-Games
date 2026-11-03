@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minesveiper Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Mine<br><span>sveiper</span> daily</h1>
+    <div class="streak">
+      <div class="stat"><b id="streak">0</b><small>Rekke</small></div>
+      <div class="stat"><b id="total">0</b><small>Løst totalt</small></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="game">
+      <div class="dayline">
+        <h2 id="dayTitle">I dag</h2>
+        <div class="side"><span class="meta"><small>Miner igjen</small><b id="left">0</b></span><span class="meta"><small>Tid</small><b id="time">0:00</b></span></div>
+      </div>
+      <div class="stage ms">
+        <div class="mboard" id="board" role="grid" aria-label="Minefelt"></div>
+        <div class="overlay" id="overlay" hidden><div class="panel"></div></div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="flagBtn" aria-pressed="false">⚑ Flaggmodus</button>
+      </div>
+      <p class="rules">Åpne alle rutene som ikke skjuler en mine. Tallet i en rute viser hvor mange miner som ligger i de åtte rutene rundt. Høyreklikk eller hold fingeren inne for å sette et flagg, eller slå på flaggmodus. Trykk på et tall som har riktig antall flagg rundt seg for å åpne resten av naborutene. Hele brettet starter dekket, men det første trykket ditt treffer aldri en mine. Antall miner øker utover uka.</p>
+    </section>
+
+    <aside class="cal">
+      <div class="calhead">
+        <button class="nav" id="prevM" aria-label="Forrige måned">‹</button>
+        <h3 id="monthTitle"></h3>
+        <button class="nav" id="nextM" aria-label="Neste måned">›</button>
+      </div>
+      <div class="grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--sky)"></i>Ikke løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--ink)"></i>I dag</span>
+      </div>
+      <div class="monthstat" id="monthStat"></div>
+    </aside>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

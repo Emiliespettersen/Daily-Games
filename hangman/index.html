@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hangman Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Hang<br><span>man</span> daily</h1>
+    <div class="streak">
+      <div class="stat"><b id="streak">0</b><small>Rekke</small></div>
+      <div class="stat"><b id="total">0</b><small>Løst totalt</small></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="game">
+      <div class="dayline">
+        <h2 id="dayTitle">I dag</h2>
+        <div class="side"><span class="meta"><small>Feil</small><span id="wrong"></span></span></div>
+      </div>
+      <div class="stage hm">
+        <svg class="gallows" viewBox="0 0 200 220" role="img" aria-label="Hangman-figur">
+          <g class="frame">
+            <line x1="15" y1="210" x2="150" y2="210"/>
+            <line x1="50" y1="210" x2="50" y2="18"/>
+            <line x1="48" y1="20" x2="142" y2="20"/>
+            <line x1="50" y1="55" x2="85" y2="20"/>
+          </g>
+          <g class="parts">
+            <line id="p1" x1="140" y1="20" x2="140" y2="44"/>
+            <circle id="p2" cx="140" cy="62" r="18"/>
+            <line id="p3" x1="140" y1="80" x2="140" y2="138"/>
+            <line id="p4" x1="140" y1="96" x2="116" y2="120"/>
+            <line id="p5" x1="140" y1="96" x2="164" y2="120"/>
+            <line id="p6" x1="140" y1="138" x2="120" y2="176"/>
+            <line id="p7" x1="140" y1="138" x2="160" y2="176"/>
+          </g>
+        </svg>
+        <div class="play">
+          <p class="cat">Kategori: <b id="cat"></b></p>
+          <div class="slots" id="slots" aria-live="polite"></div>
+          <div class="kb" id="kb"></div>
+        </div>
+        <div class="overlay" id="overlay" hidden><div class="panel"></div></div>
+      </div>
+      <p class="rules">Gjett dagens norske ord én bokstav om gangen. Du kan gjette feil sju ganger før figuren er ferdig tegnet. Du kan også skrive med tastaturet ditt.</p>
+    </section>
+
+    <aside class="cal">
+      <div class="calhead">
+        <button class="nav" id="prevM" aria-label="Forrige måned">‹</button>
+        <h3 id="monthTitle"></h3>
+        <button class="nav" id="nextM" aria-label="Neste måned">›</button>
+      </div>
+      <div class="grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--sky)"></i>Ikke løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--ink)"></i>I dag</span>
+      </div>
+      <div class="monthstat" id="monthStat"></div>
+    </aside>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

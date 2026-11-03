@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ordgjetter Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Ord<br><span>gjetter</span> daily</h1>
+    <div class="streak">
+      <div class="stat"><b id="streak">0</b><small>Rekke</small></div>
+      <div class="stat"><b id="total">0</b><small>Løst totalt</small></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="game">
+      <div class="dayline">
+        <h2 id="dayTitle">I dag</h2>
+        <div class="side"></div>
+      </div>
+      <div class="stage og">
+        <div class="oboard" id="board" role="grid" aria-label="Gjetninger"></div>
+        <div class="kb" id="kb"></div>
+        <div class="overlay" id="overlay" hidden><div class="panel"></div></div>
+      </div>
+      <p class="rules">Gjett dagens norske ord på fem bokstaver. Du har seks forsøk. Etter hvert forsøk blir rutene farget: grønn betyr riktig bokstav på riktig plass, gul betyr at bokstaven er med i ordet, men på feil plass, og grå betyr at bokstaven ikke er med. Gjetningen må være et ekte norsk ord.</p>
+    </section>
+
+    <aside class="cal">
+      <div class="calhead">
+        <button class="nav" id="prevM" aria-label="Forrige måned">‹</button>
+        <h3 id="monthTitle"></h3>
+        <button class="nav" id="nextM" aria-label="Neste måned">›</button>
+      </div>
+      <div class="grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--sky)"></i>Ikke løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--ink)"></i>I dag</span>
+      </div>
+      <div class="monthstat" id="monthStat"></div>
+    </aside>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Number Match Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Number<br><span>Match</span> daily</h1>
+    <div class="streak">
+      <div class="stat"><b id="streak">0</b><small>Rekke</small></div>
+      <div class="stat"><b id="total">0</b><small>Løst totalt</small></div>
+    </div>
+  </header>
+
+  <div class="main">
+    <section class="game">
+      <div class="dayline">
+        <h2 id="dayTitle">I dag</h2>
+        <div class="score"><small>Poeng</small><span id="score">0</span></div>
+      </div>
+      <div class="boardwrap">
+        <div class="board" id="board" role="grid" aria-label="Spillbrett"></div>
+        <div class="overlay" id="overlay" hidden>
+          <div class="panel" id="panel"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" id="addBtn">+ Legg til tall <span class="pips" id="pips"></span></button>
+        <button class="btn" id="hintBtn">Hint</button>
+        <button class="btn" id="resetBtn">Start på nytt</button>
+      </div>
+      <p class="rules">Fjern par av like tall (3 og 3) eller tall som blir 10 til sammen (4 og 6). Parene må ligge ved siden av hverandre vannrett, loddrett eller diagonalt, eller fra slutten av én rad til starten av neste. Tomme ruter teller ikke som hindring. Tøm hele brettet for å løse dagen.</p>
+    </section>
+
+    <aside class="cal">
+      <div class="calhead">
+        <button class="nav" id="prevM" aria-label="Forrige måned">‹</button>
+        <h3 id="monthTitle"></h3>
+        <button class="nav" id="nextM" aria-label="Neste måned">›</button>
+      </div>
+      <div class="grid" id="calGrid"></div>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--sky)"></i>Ikke løst</span>
+        <span><i style="box-shadow:inset 0 0 0 2px var(--ink)"></i>I dag</span>
+      </div>
+      <div class="monthstat" id="monthStat"></div>
+    </aside>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
